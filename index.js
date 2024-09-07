@@ -26,13 +26,46 @@ function sumRecursive(n) {
 }
 
 console.log(sumRecursive(4))
+
 // Algorithm 3
 
+function reverseString(str) {
+  return str.split('').reverse().join('');
+}
+
+console.log(reverseString('Hello'))
 
 // Algorithm 4
 
+function capitalizeString(str){
+  return str.toUpperCase();
+}
 
+console.log(capitalizeString("Hello world."))
 // Algorithm 5
 
+function productOfArray(arr){
+  return arr.reduce((product, current) => product * current, 1)
+}
+
+console.log(productOfArray([1,2,3,4,5]))
 
 // Algorithm 6
+
+function printNonRepeatingIntegers(arr) {
+  const counts = {};
+  arr.forEach(num => {
+    counts[num] = (counts[num] || 0) + 1;
+  });
+
+  const nonRepeating = [];
+  for (const [num, count] of Object.entries(counts)) {
+    if (count === 1) {
+      nonRepeating.push(Number(num));
+    }
+  }
+
+  console.log(nonRepeating.join(', '));
+}
+
+printNonRepeatingIntegers([1, 5, 1, 6, 8, 5]); 
